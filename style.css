@@ -1,0 +1,22 @@
+* {
+    text-align: center;
+    justify-content: center;
+    background-color: palegoldenrod;
+}
+
+#theHeader {
+    border-style: solid;
+    margin: 0px;
+    padding: 30px;
+    background-color: coral;
+    list-style-type: none;
+}
+
+#startPageContainer, #quizPageContainer {
+    max-width: 1200px;
+    border-style: solid;
+    border-color: black;
+    margin: 40px;
+    padding: 30px;
+    justify-content: center;
+}
