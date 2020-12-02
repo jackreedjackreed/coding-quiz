@@ -40,8 +40,8 @@ var remainingQuestions = $("#remainingQuestions");
 
 console.log(questions[0]);
 console.log(questions[0].question);
-console.log(questions[0].answers[0].text);
-// ^ = jack
+console.log(questions[0].answers[3].text);
+// ^ = quack
 
 // timer starts at 60
 
@@ -94,10 +94,26 @@ function newQuestion(QuestionsIndex) {
     answerButton2.text(questions[QuestionsIndex].answers[2].text);
     answerButton3.text(questions[QuestionsIndex].answers[3].text);
 
+    // add event listeners to each button --> input is the boolean value of the pressed button 
+    answerButton0.on("click"), checkCorrect(questions[QuestionsIndex].answers[0].correct);
+    answerButton1.on("click"), checkCorrect(questions[QuestionsIndex].answers[1].correct);
+    answerButton2.on("click"), checkCorrect(questions[QuestionsIndex].answers[2].correct);
+    answerButton3.on("click"), checkCorrect(questions[QuestionsIndex].answers[3].correct);
+
     // console.log(answerButton0.text(questions[QuestionsIndex].answers[0].text));
     // console.log(answerButton1.text(questions[QuestionsIndex].answers[1].text));
     // console.log(answerButton2.text(questions[QuestionsIndex].answers[2].text));
     // console.log(answerButton3.text(questions[QuestionsIndex].answers[3].text));
+}
+
+// user clicks and function checks if correct
+function checkCorrect(clickedButton) {
+    // create 'answers' to eliminate some confusion
+    var answers = questions[clickedButton].answers;
+    if (clickedButton.questions[1].answers[0].correct == "true") {
+    // fxn listens for button clicks
+    // checks to see if the answer (questions[indexOfQuestionArray].answers[indexOfPressedButton].correct == true)
+    }
 }
 
 console.log(newQuestion(0));
