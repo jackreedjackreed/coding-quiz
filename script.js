@@ -1,12 +1,34 @@
 //    V A R I A B L E S   //
 
-// user score
-//   var userScore = 0
-// questions array
+var quizContainer = $("#quizPageContainer");
+var startContainer = $("#startPageContainer");
+var highScoresContainer = $("#highScoresContainer");
 
+// user score
+    // var userScore = 0
+// questions array
+    var questions = [
+        { // question 1
+            question: "what's my name?",
+            answers: [
+                {text: "jack", correct: true}, // borrowed this question array layout from https://www.youtube.com/watch?v=riDzcEQbX6k
+                {text: "hack", correct: false}
+            ]
+        },
+        { // question 2
+            question: "how many plants are nearby?",
+            answers: [
+                {text: "4", correct: false},
+                {text: "7", correct: true}
+            ]
+        }
+    ]
 // timer starts at 60
 
 // ---------------------------------------------- //
+
+quizContainer.hide();
+highScoresContainer.hide();
 
 // start game function
 function startGame() {
@@ -17,9 +39,13 @@ function startGame() {
         // s t a r t   the   t i m e 
 
     }
-    // hides the welcome page
-    
-    // calls for first question 
+    // hides the welcome page, shows the quiz
+    startContainer.hide();
+    quizContainer.show();
+
+    // loop through the length of the questions until end or time = 0
+
+        // calls for  question 
 
 
 }
