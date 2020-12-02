@@ -5,26 +5,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
+    <title>Coding Quiz</title>
     
     <link rel="stylesheet" href="style.css" />
     <link rel="script" href="script.js" />
   </head>
 
   <body>
+    <!-- header -->
+    <ul>
+         <!-- view high score -->
+        <li><a href="#high-score">High Scores</a></li>
+        <!-- time -->
+        <li style="float:right"> Time </li>
+
+    </ul>
+       
+        
     <!-- start page container -->
-        <!-- header -->
-            <!-- view high score -->
-            <!-- time -->
+    <div id=StartPageContainer>
         <!-- title -->
+        <h2>Coding Quiz Challenge</h2>
         <!-- desciprtion -->
+        <h3>Take this quiz to refine your coding knowledge!</h3>
+        <br>
         <!-- start button -->
+        <button type=button>Start!</button>
+    </div>
+        
+          
+        
     
     <!-- quiz page container -->
+    <div id=QuizPageContainer>
         <!-- question displayed -->
+        <div>
+            <h3 class=questionDisplayed>Filler Text   ?</h3>
+        </div>
         <!-- container with four buttons -->
+        <div id=buttonsContainer>
+            <button type=button class=button>Answer 1</button>
+            <button type=button class=button>Answer 2</button>
+            <button type=button class=button>Answer 3</button>
+            <button type=button class=button>Answer 4</button>
+        </div>
         <!-- correct/incorrect-->
+        <div id=correctIncorrect>
+            <h5>you were correct/incorrect !</h5>
+        </div>
         <!-- how man questiosn remain (?) -->
+        <div id=remainingQuestions>
+            <h6>x out of y questions remain</h6>
+        </div>
+    </div>
+        
 
 
   </body>
