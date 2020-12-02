@@ -2,9 +2,11 @@
     text-align: center;
     justify-content: center;
     background-color: palegoldenrod;
+    margin: 1px;
+    padding: 3px;
 }
 
-#theHeader {
+#theHeader, .theHeaderStuff {
     border-style: solid;
     margin: 0px;
     padding: 30px;
@@ -12,11 +14,12 @@
     list-style-type: none;
 }
 
-#startPageContainer, #quizPageContainer {
-    max-width: 1200px;
+#startPageContainer, #quizPageContainer, #highScoresContainer {
     border-style: solid;
-    border-color: black;
+    border-color: darkolivegreen;
+    border-width: 3px;
     margin: 40px;
     padding: 30px;
     justify-content: center;
 }
+
