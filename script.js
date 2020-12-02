@@ -9,9 +9,8 @@ var answerButton0 = $("#answerButton0");
 var answerButton1 = $("#answerButton1");
 var answerButton2 = $("#answerButton2");
 var answerButton3 = $("#answerButton3");
-var correctIncorret = $("#correctIncorrect");
+var correctIncorrect = $("#correctIncorrect");
 var remainingQuestions = $("#remainingQuestions");
-
 
 // user score
     // var userScore = 0
@@ -47,24 +46,37 @@ console.log(questions[0].answers[3].text);
 
 // ---------------------------------------------- //
 
+var totalQuestionCount = questions.length;
+var currentQuestionCount = 0;
+var userScore = 0;
+
 quizContainer.hide();
 highScoresContainer.hide();
-correctIncorret.hide();
+correctIncorrect.hide();
 remainingQuestions.hide();
+correctIncorrect.text("heyeheyehey");
 
 // start game function
 startButton.on("click", function startGame() {
     // user score
-    var userScore = 0;
+    let userScore = 0;
     // starts the time
     function startTime() {
         // s t a r t   the   t i m e 
 
     }
-    // hides the welcome page, shows the quiz
+    // hides the welcome page, shows the welcome page, hides the correctIncorrect, shows the remaining questions
     startContainer.hide();
     quizContainer.show();
+    correctIncorrect.hide();
+    remainingQuestions.show();
+    runGame();
+    }
+)
 
+function runGame() {
+    //while (totalQuestionCount != currentQuestionCount)  // || time != 0 )
+    //{
     // loop through the length of the questions until end or time = 0
     for (i=0; i<questions.length; i++) {
         // calls for  question
@@ -76,8 +88,7 @@ startButton.on("click", function startGame() {
         }
         }
     }
-)
-    
+//}
 
 // start timer function
     // subtract time when wrong answer
@@ -94,11 +105,13 @@ function newQuestion(QuestionsIndex) {
     answerButton2.text(questions[QuestionsIndex].answers[2].text);
     answerButton3.text(questions[QuestionsIndex].answers[3].text);
 
-    // add event listeners to each button --> input is the boolean value of the pressed button 
+    // add event listeners to each button --> input to checkCorrect = the boolean value of the pressed button 
     answerButton0.on("click"), checkCorrect(questions[QuestionsIndex].answers[0].correct);
     answerButton1.on("click"), checkCorrect(questions[QuestionsIndex].answers[1].correct);
     answerButton2.on("click"), checkCorrect(questions[QuestionsIndex].answers[2].correct);
     answerButton3.on("click"), checkCorrect(questions[QuestionsIndex].answers[3].correct);
+
+    return
 
     // console.log(answerButton0.text(questions[QuestionsIndex].answers[0].text));
     // console.log(answerButton1.text(questions[QuestionsIndex].answers[1].text));
@@ -107,14 +120,30 @@ function newQuestion(QuestionsIndex) {
 }
 
 // user clicks and function checks if correct
-function checkCorrect(clickedButton) {
-    // create 'answers' to eliminate some confusion
-    var answers = questions[clickedButton].answers;
-    if (clickedButton.questions[1].answers[0].correct == "true") {
+function checkCorrect(clickedButtonBoolean) {
+    // the boolean is true and answer is correct, user score increased by 1, messages show
+    var QuestionsIndex = questions[this];
+    if (clickedButtonBoolean) {
+        userScore ++;
+        correctIncorrect.text("Correct!");
+        correctIncorrect.show();
+        remainingQuestions.text(QuestionsIndex + "of " + totalQuestionCount + ".");
+        remainingQuestions.show();
+        return
+    }
+    else {
+        // time -= 5;
+        // the boolean is false and answer is incorrect, time -=5, messages show
+        correctIncorrect.text("Incorrect boooooo!");
+        correctIncorrect.show();
+        remainingQuestions.text(QuestionsIndex + " of " + totalQuestionCount + ".");
+        remainingQuestions.show();
+        return
+    }
     // fxn listens for button clicks
     // checks to see if the answer (questions[indexOfQuestionArray].answers[indexOfPressedButton].correct == true)
-    }
 }
+
 
 console.log(newQuestion(0));
 
