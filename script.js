@@ -39,7 +39,7 @@ var remainingQuestions = $("#remainingQuestions");
 
 console.log(questions[0]);
 console.log(questions[0].question);
-console.log(questions[0].answers[3].text);
+console.log(questions[0].answers[2].text);
 // ^ = quack
 
 // timer starts at 60
@@ -145,7 +145,7 @@ function checkCorrect(clickedButtonBoolean) {
 }
 
 
-console.log(newQuestion(0));
+//console.log(newQuestion(0));
 
 // user answers a question
 
