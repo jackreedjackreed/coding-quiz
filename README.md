@@ -12,3 +12,5 @@ allows user to enter and clear names on a high score list
 Click the "Start" button. Answer the questions as best you can.
 
 ** Link ** https://jackreedjackreed.github.io/coding-quiz/
+
+<img src="screenshot.png" alt="screnshot of application">
